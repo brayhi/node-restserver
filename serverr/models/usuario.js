@@ -47,7 +47,7 @@ usuarioSchema.methods.toJSON = function() {
     delete userObject.password;
     return userObject;
 
-}
+};
 
 usuarioSchema.plugin(uniqueValidator, {message: '{PATH} ya existe'});
 

@@ -120,4 +120,4 @@ app.delete('/usuario/:id', function (req, res) {
     });
 });
 
-module.exports = app ;
+module.exports = app;
