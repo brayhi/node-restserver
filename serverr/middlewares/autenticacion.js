@@ -43,11 +43,27 @@ let verificaAdmin= (req, res, next) => {
     } 
 }
 
+let verificaCreador = (req, res, next) => {
+    if( req.usuario._id !== Categoria.usuario){
+        return res.json({
+            ok:false,
+            err:{
+                message: 'No eres el creador de esta categoria'
+            }
+        })
+
+    }else{
+        next();
+    }
+    
+}
+
 
 
 
 module.exports = {
 
     verificaToken,
-    verificaAdmin
+    verificaAdmin,
+    verificaCreador
 }
